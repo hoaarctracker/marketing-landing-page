@@ -2,6 +2,7 @@ import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Inter } from 'next/font/google'
 import Script from 'next/script'
+import { appVersion } from '@/lib/version'
 import './globals.css'
 
 const GA_MEASUREMENT_ID = 'G-373DNS50S0'
@@ -37,6 +38,9 @@ export const metadata: Metadata = {
       },
     ],
     apple: '/apple-icon.png',
+  },
+  other: {
+    'build-version': appVersion,
   },
 }
 

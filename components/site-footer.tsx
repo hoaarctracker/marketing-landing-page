@@ -1,6 +1,7 @@
 import Image from "next/image"
 import { Mail } from "lucide-react"
 import { DemoButton } from "@/components/demo-button"
+import { appVersion } from "@/lib/version"
 
 const productLinks = [
   { label: "Problem", href: "#problem" },
@@ -93,7 +94,10 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border pt-6 text-sm text-muted-foreground sm:flex-row">
-          <p>© {new Date().getFullYear()} HOA ARC Tracker. All rights reserved.</p>
+          <p>
+            © {new Date().getFullYear()} HOA ARC Tracker. All rights reserved.
+            <span className="text-muted-foreground/60"> · {appVersion}</span>
+          </p>
           <div className="flex items-center gap-6">
             <a href="#" className="transition-colors hover:text-foreground">
               Privacy Policy
